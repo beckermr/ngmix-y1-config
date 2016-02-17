@@ -1,0 +1,153 @@
+# MOF with cmodel fits
+
+fitter_type: "max-ngmix-boot"
+imageio_type: "meds-des-y1"
+
+fit_me_galaxy: True
+fit_coadd_galaxy: False
+
+read_wcs: True
+read_me_wcs: False
+
+model_nbrs: True
+model_nbrs_method: 'subtract'
+mof:
+    maxabs_conv:  [1.0e-3,1.0e-3,1.0e-6,1.0e-6,1.0e-6,1.0e-6,1.0e-6,1.0e-6,1.0e-6]
+    maxfrac_conv: [1.0e-6,1.0e-6,1.0e-6,1.0e-6,1.0e-6,1.0e-3,1.0e-3,1.0e-3,1.0e-3]
+    maxerr_conv: 0.5 
+    max_itr: 15
+    min_itr: 10
+    min_useg_itr: 1
+    write_convergence_data: False
+    convergence_model: 'cm'
+
+prop_sat_starpix: True
+flag_y1_stellarhalo_masked: True
+intr_prof_var_fac: 0.0
+
+max_pars:
+    method: 'lm'
+    ntry: 2
+
+    use_bic_test_for_simp_models: True
+    psf_prob_thresh: 1.1
+    exp_prob_thresh: 1.1
+    use_fracdev_grid: False
+    fracdev_range: [0.0,1.0]
+    TdByTe_range: [0.0,1.0e+12]
+    
+    lm_pars:
+        maxfev: 2000
+        xtol: 5.0e-5
+        ftol: 5.0e-5
+
+#max_box_size: 48
+
+#region: "cweight-nearest"
+region: 'mof'
+
+min_weight: 1.0e-4
+
+# flagging
+#replacement_flags: "${DESDATA}/EXTRA/combined-image-flags/sva1_astrom_run1.0.1_stats_flagged_sheldon_psfv3_blacklists.json"
+
+# astrom
+# 2**0 + 2**1 + 2**2 + 2**3 + 2**5 + 2**6 + 2**7 + 2**8 + 2**9
+#  = 1007
+# blacklists
+# 2**(10+0) + 2**(10+1) + 2**(10+2) + 2**(10+3) + 2**(10+4) = (31<<10)
+#  = 31744
+# psf
+# 2**(15+0) + 2**(15+1) + 2**(15+4)
+#  = (19<<15)
+# total
+# 
+# 1007 + (31<<10) + (19<<15)
+#  = 655343
+
+image_flags2check: 655343
+
+use_psf_rerun: False
+psf_rerun_version: "v8"
+normalize_psf: False
+
+print_params: True
+
+psf_pars:
+    model: 'em3'
+    ntry: 20
+    maxiter: 5000
+    tol: 5.0e-6
+
+replace_cov: False
+cov_pars:
+    m: 5
+    h: 1.0e-3
+
+round_pars:
+    fitter_type: 'max'
+
+isample_pars:
+
+    nsample: [500,500]
+    ifactor: 1.0
+    df: 2.1
+
+    # assuming 3 bands and asinh parameters
+    min_err: [1.0e-4,1.0e-4,
+              1.0e-3,1.0e-3,
+              1.0e-4,
+              1.0e-4,1.0e-4,1.0e-4]
+    max_err: [1.0,1.0,
+              2.0,2.0,
+              1.0,
+              1.0,1.0,1.0]
+
+    asinh_pars: [4,5,6,7]
+
+
+use_logpars: False
+model_pars:
+    cm:
+        g:
+            type: "cosmos-sersic"
+
+        # for asinh pars
+        T:
+            type: "TwoSidedErf"
+            pars: [-10.0, 0.03, 1.0e+06, 1.0e+05]
+            #type: "lognormal"
+            #mean: 1.26
+            #sigma: 4.75
+
+        counts:
+            type: "TwoSidedErf"
+            pars: [-1.0e+04, 1.0, 1.0e+09, 0.25e+08]
+            repeat: True
+
+        cen:
+            type: "dgauss"
+            width: 0.27
+
+        # for now use stuff from great-des
+        fracdev:
+            file: '/nfs/slac/des/fs1/g/sims/beckermr/DES/y1_ngmix/tb_y1a1_v01c/work003/sfit-noisefree-c01-fracdev.fits'
+
+do_shear: False
+
+# checkpoint times in minutes, needed for condor in case we pass a batch system
+# limit such as in the condor scavenge.
+# 0 means after the first object
+
+# checkpoints for lsf
+checkpoints: [0,5,10,15,20,25,
+              30,60,
+              90,120, 
+              150,180,
+              210,240,
+              270,300,
+              330,360,
+              390,420,
+              480,540,
+              600,700,
+              800,900,1000,1200,1400,1600,1800,2000]
