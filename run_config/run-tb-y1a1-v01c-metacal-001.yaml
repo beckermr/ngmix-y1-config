@@ -1,0 +1,27 @@
+# gauss psf
+run: 'tb-y1a1-v01c-metacal-002'
+
+# versions
+meds_version: 'tb-y1a1-v01c'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+ngmix_info:
+  branch: "keep_prepix"
+  hash: "40ba9d5e6afce5422e47c26aaf209cd21e74a5fc"
+ngmixer_info:
+  branch: "y1prep"
+  hash: "ec1ccd09c5724daf97eb24ae59bd8b4c02a036c5"
+galsim_info:
+  branch: "#720"
+  hash: "e11369f15e70d8b8b5e3ef8024bbc0f5f1dd0113"
+
+# job setup
+# note fof is just a single object if not doing multi-object-fitting
+num_fofs_per_chunk: 100
+
+# what to do
+bands: ['r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'
