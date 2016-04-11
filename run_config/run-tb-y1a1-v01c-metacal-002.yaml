@@ -8,10 +8,10 @@ obj_flags_version: '001'
 
 ngmix_info:
   branch: "keep_prepix"
-  hash: "d34a20c1fe3b7136c828047bb50b0ebec319bfc3"
+  hash: "8537b9dacde34d75907cb3dc0c92022384470a9f"
 ngmixer_info:
   branch: "y1prep"
-  hash: "5aafc60a170b3c2519d3015d5c3689ad7db0f4d4"
+  hash: "980c83babfd7585c1ae46d01c80a51a65c8366e7"
 galsim_info:
   branch: "#720"
   hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
