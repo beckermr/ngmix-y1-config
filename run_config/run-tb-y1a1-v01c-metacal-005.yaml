@@ -1,3 +1,5 @@
+# checking bmask frac
+# checking central 4 pixel radius of bmask
 # symmetrizing bmask
 # using original weight map to add noise
 # gauss psf
@@ -13,7 +15,7 @@ ngmix_info:
   hash: "60ce3ba996ea220a5c781e078611262883faf7e5"
 ngmixer_info:
   branch: "master"
-  hash: "dd47b7a5d3bfd8ac88b206f4b27b8e60f7e42c79"
+  hash: "b3afad04dd9c0ba90c7fa8b282067ab5eff8e520"
 galsim_info:
   branch: "#720"
   hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
