@@ -1,0 +1,145 @@
+# coellip2
+# now using raw eight map for noise fix
+# checking bmask frac
+# checking central 4 pixel radius of bmask
+# symmetrizing bmask
+#
+# psf rerun y1a1-v02
+# linear pars and flat priors
+# gauss psf
+
+fitter_type: "metacal-ngmix-boot"
+imageio_type: "meds-des-y1"
+
+fit_me_galaxy: True
+fit_coadd_galaxy: False
+
+read_wcs: False
+read_me_wcs: False
+
+model_nbrs: False
+
+# skip when either all weight or all image are zero
+ignore_zero_weights_images: True
+
+# skip when too many pixels are masked in the bitmask
+max_bmask_frac: 0.1
+
+# skip if central region is masked
+# this is a 4 pixel offset in each direction
+central_bmask_radius: 4
+
+# we are using uberseg, so the weight map will be modifed. But
+# for correcting the correlated noise from metacal we want
+# touse the original weight map
+use_original_weight: True
+
+# mof related stuff, not used for metacal
+prop_sat_starpix: False
+flag_y1_stellarhalo_masked: False
+intr_prof_var_fac: 0.0
+
+max_pars:
+    method: 'lm'
+    ntry: 2
+
+    lm_pars:
+        maxfev: 2000
+        xtol: 5.0e-5
+        ftol: 5.0e-5
+
+#max_box_size: 48
+
+# use the ubersegmentation map, composited from the coadd
+# onto each single-epoch image.  Then set the weight map
+# to zero where the ubserseg does not belong to the
+# object of interest
+
+region: "cweight-nearest"
+
+min_weight: 1.0e-4
+
+# flagging
+#replacement_flags: "${DESDATA}/EXTRA/combined-image-flags/sva1_astrom_run1.0.1_stats_flagged_sheldon_psfv3_blacklists.json"
+
+# astrom
+# 2**0 + 2**1 + 2**2 + 2**3 + 2**5 + 2**6 + 2**7 + 2**8 + 2**9
+#  = 1007
+# blacklists
+# 2**(10+0) + 2**(10+1) + 2**(10+2) + 2**(10+3) + 2**(10+4) = (31<<10)
+#  = 31744
+# psf
+# 2**(15+0) + 2**(15+1) + 2**(15+4)
+#  = (19<<15)
+# total
+# 
+# 1007 + (31<<10) + (19<<15)
+#  = 655343
+
+image_flags2check: 655343
+
+use_psf_rerun: True
+psf_rerun_version: "y1a1-v02"
+normalize_psf: False
+
+print_params: True
+
+psf_pars:
+    model: 'coellip2'
+    ntry: 20
+    #maxiter: 5000
+    #tol: 5.0e-6
+
+replace_cov: False
+cov_pars:
+    m: 5
+    h: 1.0e-3
+
+round_pars:
+    fitter_type: 'max'
+
+metacal_pars:
+    fixnoise: True
+
+use_logpars: False
+model_pars:
+    gauss:
+        g:
+            type: "ba"
+            sigma: 0.3
+
+        # for asinh pars
+        T:
+            type: "TwoSidedErf"
+            pars: [-10.0, 0.03, 1.0e+06, 1.0e+05]
+            #type: "lognormal"
+            #mean: 1.26
+            #sigma: 4.75
+
+        counts:
+            type: "TwoSidedErf"
+            pars: [-1.0e+04, 1.0, 1.0e+09, 0.25e+08]
+            repeat: True
+
+        cen:
+            type: "dgauss"
+            width: 0.27
+
+do_shear: False
+
+# checkpoint times in minutes, needed for condor in case we pass a batch system
+# limit such as in the condor scavenge.
+# 0 means after the first object
+
+# checkpoints for lsf
+checkpoints: [0,5,10,15,20,25,
+              30,60,
+              90,120, 
+              150,180,
+              210,240,
+              270,300,
+              330,360,
+              390,420,
+              480,540,
+              600,700,
+              800,900,1000,1200,1400,1600,1800,2000]
