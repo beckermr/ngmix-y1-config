@@ -1,0 +1,33 @@
+# em2
+# checking bmask frac
+# checking central 4 pixel radius of bmask
+# symmetrizing bmask
+# using original weight map to add noise
+# gauss psf
+run: 'y1a1-v01-metacal-003'
+
+# versions
+meds_version: 'y1a1-v01'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+ngmix_info:
+  branch: "keep_prepix"
+  hash: "916db1c0734ff614523f4524135c34afe48c761f"
+ngmixer_info:
+  branch: "master"
+  hash: "7202f10123445ba2e4a50029f46f0fa50cc9210d"
+galsim_info:
+  branch: "#720"
+  hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
+
+
+# job setup
+# note fof is just a single object if not doing multi-object-fitting
+num_fofs_per_chunk: 100
+
+# what to do
+bands: ['r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'
