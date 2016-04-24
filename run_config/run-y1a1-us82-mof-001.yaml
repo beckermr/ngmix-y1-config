@@ -1,0 +1,29 @@
+# run name
+run: 'y1a1-us82-mof-001'
+
+# versions
+meds_version: 'tb-y1a1-us82-000'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# job setup
+num_fofs_per_chunk: 100
+
+# what to do
+bands: ['g','r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'
+
+
+ngmix_info:
+  branch: "master"
+  hash: "3f088ddb9a617bd2ab8d1be90c46cc6f8f5ad8ce"
+ngmixer_info:
+  branch: "master"
+  hash: "70e68c54a7d5def3fa8b61fa6ba2074a978dd934"
+galsim_info:
+  branch: "#720"
+  hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
+
+
