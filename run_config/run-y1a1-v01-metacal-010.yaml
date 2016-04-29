@@ -19,10 +19,10 @@ obj_flags_version: '001'
 # initial run
 ngmix_info:
   branch: "master"
-  hash: ""
+  hash: "346e604ae0f8768f1d8d2b9e117f4defdc83ee58"
 ngmixer_info:
   branch: "nbrcorr"
-  hash: ""
+  hash: "87467befa86fbe125987f3e7507809838124cc15"
 galsim_info:
   branch: "#720"
   hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"

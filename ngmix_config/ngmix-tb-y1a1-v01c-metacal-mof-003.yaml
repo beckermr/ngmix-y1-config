@@ -1,6 +1,11 @@
 # subtracting neighbors, so just using weight
 # type 'weight'
 #
+# cutting on bmask and weight zero frac, but note
+# I did replace pixels with the best fit model in
+# the nbr sub. code.  I did not reset the bmask
+# and weight maps though
+#
 # em2
 # now using raw eight map for noise fix
 # checking bmask frac
@@ -36,8 +41,8 @@ guess_from_nbrs: False
 # skip when either all weight or all image are zero
 ignore_zero_weights_images: True
 
-# skip when too many pixels are masked in the bitmask
-max_bmask_frac: 0.1
+max_bmask_frac: 0.10
+max_zero_weight_frac: 0.10
 
 # skip if central region is masked
 # this is a 4 pixel offset in each direction

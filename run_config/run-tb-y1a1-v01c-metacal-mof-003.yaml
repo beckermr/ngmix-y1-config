@@ -20,10 +20,10 @@ mof_version: "y1-018"
 # initial run
 ngmix_info:
   branch: "master"
-  hash: "3f088ddb9a617bd2ab8d1be90c46cc6f8f5ad8ce"
+  hash: "647e5857f12d87be2bb61ed0dda12aa95321f54f"
 ngmixer_info:
-  branch: "master"
-  hash: "4fb98dec4e2b47de7914e7f41e612518fa54ae59"
+  branch: "nbrcorr"
+  hash: "d81453df145ede1c936b10abaef75c873a227fb0"
 galsim_info:
   branch: "#720"
   hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
