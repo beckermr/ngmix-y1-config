@@ -1,0 +1,27 @@
+run: 'tb-y1a1-v01c-max-001'
+
+# versions
+meds_version: 'tb-y1a1-v01c'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# initial run
+ngmix_info:
+  branch: "master"
+  hash: "647e5857f12d87be2bb61ed0dda12aa95321f54f"
+ngmixer_info:
+  branch: "nbrcorr"
+  hash: "827da8593061809d1c438a09f6d679922d8cf400"
+galsim_info:
+  branch: "#720"
+  hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
+
+# job setup
+# note fof is just a single object if not doing multi-object-fitting
+num_fofs_per_chunk: 1000
+
+# what to do
+bands: ['r']
+
+# how to assemble results
+concat_type: 'concat-des'

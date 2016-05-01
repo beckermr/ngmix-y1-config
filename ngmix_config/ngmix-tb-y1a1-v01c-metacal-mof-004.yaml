@@ -1,0 +1,162 @@
+# not symmetrizing anything
+# frac
+#
+# subtracting neighbors, so just using weight
+# type 'weight'
+#
+# cutting on bmask and weight zero frac, but note
+# I did replace pixels with the best fit model in
+# the nbr sub. code.  I did not reset the bmask
+# and weight maps though
+#
+# em2
+# now using raw eight map for noise fix
+# checking bmask frac
+# checking central 4 pixel radius of bmask
+# symmetrizing bmask
+#
+# psf rerun y1a1-v02
+# linear pars and flat priors
+# gauss psf
+
+fitter_type: "metacal-ngmix-boot"
+imageio_type: "meds-des-y1"
+
+fit_me_galaxy: True
+fit_coadd_galaxy: False
+
+read_wcs: False
+read_me_wcs: False
+
+#
+# make corrected nbrs file instead of masking
+#
+
+make_corrected_meds: True
+
+# not this should not be set to false for mof runs
+guess_from_nbrs: False
+
+#
+# masking and weight 
+#
+
+# skip when either all weight or all image are zero
+ignore_zero_weights_images: True
+
+# skip any bmask with one of these set
+# CEN_MODEL_MISSING = 2**13
+bmask_skip_flags: 8192
+
+max_bmask_frac: 0.10
+max_zero_weight_frac: 0.10
+
+# don't symmetrize since we replaced the pixels
+symmetrize_bmask: False
+symmetrize_weight: False
+
+# skip if central region is masked
+# this is a 4 pixel offset in each direction
+central_bmask_radius: 4
+
+
+# mof related stuff, not used for metacal
+prop_sat_starpix: False
+flag_y1_stellarhalo_masked: False
+intr_prof_var_fac: 0.0
+
+max_pars:
+    method: 'lm'
+    ntry: 2
+
+    lm_pars:
+        maxfev: 2000
+        xtol: 5.0e-5
+        ftol: 5.0e-5
+
+#max_box_size: 48
+
+
+region: "weight"
+
+min_weight: 1.0e-4
+
+# flagging
+#replacement_flags: "${DESDATA}/EXTRA/combined-image-flags/sva1_astrom_run1.0.1_stats_flagged_sheldon_psfv3_blacklists.json"
+
+# astrom
+# 2**0 + 2**1 + 2**2 + 2**3 + 2**5 + 2**6 + 2**7 + 2**8 + 2**9
+#  = 1007
+# blacklists
+# 2**(10+0) + 2**(10+1) + 2**(10+2) + 2**(10+3) + 2**(10+4) = (31<<10)
+#  = 31744
+# psf
+# 2**(15+0) + 2**(15+1) + 2**(15+4)
+#  = (19<<15)
+# total
+# 
+# 1007 + (31<<10) + (19<<15)
+#  = 655343
+
+image_flags2check: 655343
+
+use_psf_rerun: True
+psf_rerun_version: "y1a1-v02"
+normalize_psf: False
+
+print_params: True
+
+replace_cov: False
+cov_pars:
+    m: 5
+    h: 1.0e-3
+
+round_pars:
+    fitter_type: 'max'
+
+use_logpars: False
+
+model_pars:
+  gauss:
+    g:
+      type: "ba"
+      sigma: 0.3
+
+    T:
+      type: "TwoSidedErf"
+      pars: [-10.0, 0.03, 1.0e+06, 1.0e+05]
+
+    counts:
+      type: "TwoSidedErf"
+      pars: [-1.0e+04, 1.0, 1.0e+09, 0.25e+08]
+      repeat: True
+
+    cen:
+      type: "dgauss"
+      width: 0.27
+
+# separate psf models for metacal
+psf_pars:
+  model: 'em2'
+  ntry: 20
+  fit_pars:
+    maxiter: 5000
+    tol: 5.0e-6
+  
+
+# checkpoint times in minutes, needed for condor in case we pass a batch system
+# limit such as in the condor scavenge.
+# 0 means after the first object
+
+# checkpoints for lsf
+checkpoints: [0,5,10,15,20,25,
+              30,60,
+              90,120, 
+              150,180,
+              210,240,
+              270,300,
+              330,360,
+              390,420,
+              480,540,
+              600,700,
+              800,900,1000,1200,1400,1600,1800,2000]
