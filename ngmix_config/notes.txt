@@ -1,0 +1,33 @@
+Series of tests with max like, to see what might
+be related to the leakage
+
+All had em3 PSF
+First one looks better
+
+ngmix-tb-y1a1-v01c-max-001.yaml
+    cmodel
+    not making corrected meds
+    uberseg
+    checking for cen missing
+    not symmetrizing anything
+
+ngmix-tb-y1a1-v01c-max-002.yaml
+    cmodel
+    making corrected meds
+    uberseg
+    checking for cen or nbrs missing
+    symmetrizing mask and weight
+
+ngmix-tb-y1a1-v01c-max-003.yaml
+    cmodel
+    making corrected meds
+    regular weight
+    checking for cen or nbrs missing
+    symmetrizing mask and weight
+
+ngmix-tb-y1a1-v01c-max-004.yaml
+    exp
+    making corrected meds
+    regular weight
+    checking for cen or nbrs missing
+    symmetrizing mask and weight
