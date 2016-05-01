@@ -41,6 +41,10 @@ guess_from_nbrs: False
 # skip when either all weight or all image are zero
 ignore_zero_weights_images: True
 
+# skip any bmask with one of these set
+# CEN_MODEL_MISSING = 2**13
+bmask_skip_flags: 8192
+
 max_bmask_frac: 0.10
 max_zero_weight_frac: 0.10
 
