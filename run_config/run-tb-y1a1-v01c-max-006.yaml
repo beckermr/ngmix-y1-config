@@ -1,0 +1,31 @@
+# subtracting neighbors and using standard weight map
+run: 'tb-y1a1-v01c-max-006'
+
+# versions
+meds_version: 'tb-y1a1-v01c'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# should use more descriptive names perhaps
+mof_version: "y1-018"
+
+# initial run
+ngmix_info:
+  branch: "master"
+  hash: "647e5857f12d87be2bb61ed0dda12aa95321f54f"
+ngmixer_info:
+  branch: "nbrcorr"
+  hash: "1bef9a9344cd010e48fb18f187d76e23f98d12b2"
+galsim_info:
+  branch: "#720"
+  hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
+
+# job setup
+# note fof is just a single object if not doing multi-object-fitting
+num_fofs_per_chunk: 500
+
+# what to do
+bands: ['r']
+
+# how to assemble results
+concat_type: 'concat-des'
