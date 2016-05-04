@@ -38,6 +38,29 @@ max_pars:
         xtol: 5.0e-5
         ftol: 5.0e-5
 
+# don't do it in the main code
+reject_outliers: True
+
+
+make_corrected_meds: False
+
+# we try to do most stuff for mof
+max_bmask_frac: 0.1
+max_zero_weight_frac: 0.1
+
+symmetrize_bmask: False
+symmetrize_weight: False
+
+# skip when either all weight or all image are zero
+ignore_zero_weights_images: True
+
+
+# skip if central region is masked
+# this is a 4 pixel offset in each direction
+central_bmask_radius: 4
+
+
+
 #max_box_size: 48
 
 #region: "cweight-nearest"
@@ -73,8 +96,9 @@ print_params: True
 psf_pars:
     model: 'em3'
     ntry: 20
-    maxiter: 5000
-    tol: 5.0e-6
+    fit_pars:
+      maxiter: 5000
+      tol: 5.0e-6
 
 replace_cov: False
 cov_pars:
