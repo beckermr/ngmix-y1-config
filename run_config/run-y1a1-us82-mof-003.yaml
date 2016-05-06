@@ -1,0 +1,29 @@
+# the newer MEDS files
+run: 'y1a1-us82-mof-003'
+
+# versions
+# these are the new meds files
+meds_version: 'tb-y1a1-us82-001'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# job setup
+num_fofs_per_chunk: 100
+
+# what to do
+bands: ['g','r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'
+
+ngmix_info:
+  branch: "master"
+  hash: "647e5857f12d87be2bb61ed0dda12aa95321f54f"
+ngmixer_info:
+  branch: "master"
+  hash: "b8fb0439ad6e4c630de3b0dc8098e437b95a3eb3"
+galsim_info:
+  branch: "#720"
+  hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
+
+
