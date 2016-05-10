@@ -1,0 +1,30 @@
+# reverting some changes related to psf fitting etc.
+# the newer MEDS files
+run: 'y1a1-us82-mof-004'
+
+# versions
+# these are the new meds files
+meds_version: 'tb-y1a1-us82-001'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# job setup
+num_fofs_per_chunk: 100
+
+# what to do
+bands: ['g','r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'
+
+ngmix_info:
+  branch: "rev01"
+  hash: "d7ddbf497ed85711e8878bdc03eddac08511cad8"
+ngmixer_info:
+  branch: "master"
+  hash: "56c4520b072a710c604229a127c36d89f3ed8c0e"
+galsim_info:
+  branch: "#720"
+  hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
+
+
