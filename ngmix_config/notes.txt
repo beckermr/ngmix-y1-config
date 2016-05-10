@@ -1,3 +1,11 @@
+us82-001
+    using new mof run 
+        mof_version: "y1a1-us82-mof-003"
+    running max like with 2 gauss psf, gauss gal
+
+    megamix-us82-001.sh
+        - currently running the 16 first tiles.
+
 Series of tests with max like, to see what might
 be related to the leakage
 
