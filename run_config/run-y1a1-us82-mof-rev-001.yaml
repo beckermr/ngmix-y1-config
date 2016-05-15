@@ -1,0 +1,35 @@
+# revert changes in Template fitter
+# use stupid T in em
+# don't use psf rerun
+# reverting some changes related to psf fitting etc.
+# the newer MEDS files
+run: 'y1a1-us82-mof-rev-001'
+
+# versions
+# these are the new meds files
+meds_version: 'tb-y1a1-us82-000'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# job setup
+num_fofs_per_chunk: 100
+
+# what to do
+bands: ['g','r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'
+
+# reverted all the way back to a4087103838a4e4d0eb03107b6f3c658fa2f251b
+# and made a branch here
+ngmix_info:
+  branch: "detached"
+  hash: "feb73551d36ecfe380a1e2bf5287d43fc53b0216"
+ngmixer_info:
+  branch: "detached"
+  hash: "7990963e60d12a9eacd63d23f9defc5ebc532347"
+galsim_info:
+  branch: "#720"
+  hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
+
+

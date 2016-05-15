@@ -1,0 +1,33 @@
+# old meds files
+# use stupid T in em
+# don't use psf rerun
+# reverting some changes related to psf fitting etc.
+# the newer MEDS files
+run: 'y1a1-us82-old-mof-001'
+
+# versions
+# these are the new meds files
+meds_version: 'tb-y1a1-us82-000'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# job setup
+num_fofs_per_chunk: 100
+
+# what to do
+bands: ['g','r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'
+
+ngmix_info:
+  branch: "rev01"
+  hash: "734928b3f885d96bd120cc4fcc5c06ae5faf3383"
+ngmixer_info:
+  branch: "detached"
+  hash: "2f97f0ac81f3943250f5e6812d16eb14498dea7b"
+galsim_info:
+  branch: "#720"
+  hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
+
+

@@ -1,0 +1,13 @@
+# same as 001 but need a new version to test
+# old code
+#config file for nbrs list
+
+#versions
+nbrs_version: '002'
+
+nbrs_pars:
+    buff_type: 'tot'
+    buff_frac: 0.25
+    maxsize_to_replace: 256
+    new_maxsize: 384
+    check_seg: True
