@@ -1,0 +1,31 @@
+# trim psf
+# new code, new meds, new psf
+# standard now but with bug fixed psfex
+run: 'y1a1-us82-mof-013'
+
+# versions
+meds_version: 'tb-y1a1-us82-001'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# job setup
+num_fofs_per_chunk: 100
+
+# what to do
+bands: ['g','r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'
+
+
+ngmix_info:
+  branch: "master"
+  hash: "795bc9d54dbcc7f0fd731e5c6131e69cd463c978"
+ngmixer_info:
+  branch: "master"
+  hash: "a21b2b2e091e23dca4d972da6c4b47610f210e46"
+galsim_info:
+  branch: "#720"
+  hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
+
+
