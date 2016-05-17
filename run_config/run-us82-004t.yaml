@@ -1,0 +1,38 @@
+# subtract neighbors
+# this one using updated psfex reader
+# single gauss psf
+# 16 test tiles
+run: 'us82-004t'
+
+# versions
+meds_version: 'tb-y1a1-us82-001'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+mof_version: 'y1a1-us82-mof-009'
+
+# initial run
+ngmix_info:
+  branch: "master"
+  hash: "795bc9d54dbcc7f0fd731e5c6131e69cd463c978"
+ngmixer_info:
+  branch: "master"
+  hash: "7c717b43de002f6ea604ae3d435d813090e8cf79"
+galsim_info:
+  branch: "#720"
+  hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
+
+psfex:
+  branch: "master"
+  # untagged 0.3.1
+  hash: "68efb31fd519491472943cf7692a20d6d6dd1932"
+
+# job setup
+# note fof is just a single object if not doing multi-object-fitting
+num_fofs_per_chunk: 500
+
+# what to do
+bands: ['r']
+
+# how to assemble results
+concat_type: 'concat-des'
