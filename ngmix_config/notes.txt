@@ -1,3 +1,14 @@
+# to try
+
+collate rest of the mof run and do a new nbr subtraction run
+    - running in us82-006t
+
+better psf fitting
+old psf
+more bands (would just hide the problem?)
+more random realizations
+
+
 us82-001
     using new mof run 
         mof_version: "y1a1-us82-mof-003"
