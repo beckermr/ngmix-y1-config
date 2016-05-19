@@ -1,12 +1,21 @@
 # to try
 
+try removing all bad pix images, uberseg
+    - us82-005t
+    - us82-002
+    - us82-003 riz
 collate rest of the mof run and do a new nbr subtraction run
-    - running in us82-006t
+    - us82-006t looks similar to 005t with uberseg
 
-better psf fitting
-old psf
-more bands (would just hide the problem?)
-more random realizations
+- better psf fitting
+    - would help s/g separation
+- better model fitting
+    - would help everything
+- old psf
+    - as a check
+- more bands (would just hide the problem?)
+- more random realizations
+    - would help everything
 
 
 us82-001
