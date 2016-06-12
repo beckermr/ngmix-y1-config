@@ -1,0 +1,37 @@
+# mikes test psf version y1a1-v07
+# is like v06 except:
+#    PSF_SAMPLING    0.5
+#    PSF_SIZE        101,101
+run: 'y1a1-us82-mof-mjarvis-test03'
+
+# versions
+meds_version: 'tb-y1a1-us82-001'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# job setup
+num_fofs_per_chunk: 100
+
+# what to do
+bands: ['g','r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'
+
+
+ngmix_info:
+  branch: "master"
+  hash: "031723f614d36d89a6b8297cc4a6d172d939256a"
+ngmixer_info:
+  branch: "master"
+  hash: "25bb7e07b0af8c4a7065d2f689be35482c0cd26a"
+galsim_info:
+  branch: "#720"
+  hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
+
+psfex:
+  branch: "master"
+  # untagged 0.3.1
+  hash: "68efb31fd519491472943cf7692a20d6d6dd1932"
+
+

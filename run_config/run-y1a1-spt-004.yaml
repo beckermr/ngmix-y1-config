@@ -1,0 +1,33 @@
+# centering psf to avoid center moving after metacal ffts
+run: 'y1a1-spt-004'
+
+# versions
+meds_version: 'y1a1-spt-002'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# initial run
+ngmix_info:
+  branch: "master"
+  hash: "3780a66738c9ec7e4d1fefb3e5029990c0124ff6"
+ngmixer_info:
+  branch: "master"
+  hash: "77bb19712eaf23092544793a91c02baf29aae42c"
+galsim_info:
+  branch: "#720"
+  hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
+
+psfex:
+  branch: "master"
+  # untagged 0.3.1
+  hash: "68efb31fd519491472943cf7692a20d6d6dd1932"
+
+# job setup
+# note fof is just a single object if not doing multi-object-fitting
+num_fofs_per_chunk: 500
+
+# what to do
+bands: ['r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'
