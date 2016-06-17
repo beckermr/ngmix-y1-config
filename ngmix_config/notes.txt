@@ -1,4 +1,26 @@
-# to try
+tb-y1a1-us82-48-001
+    - 48x48 min box size in meds files
+    - similar
+tb-y1a1-us82-48-002
+    - coellip3 psf
+
+y1a1-spt-004
+    - riz centering psf
+    - looks similar
+y1a1-spt-005
+    - riz centering psf
+    - broad prior
+    - looks similar
+y1a1-spt-006
+    - riz centering psf
+    - tightprior
+    - looks better, although still a slope vs psf
+    - doing more tiles
+y1a1-spt-007
+    - riz centering psf
+    - tightprior
+    - not symmetrizing psf
+
 
 try removing all bad pix images, uberseg
     - us82-005t
