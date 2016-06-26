@@ -3,6 +3,38 @@ tb-y1a1-us82-48-001
     - similar
 tb-y1a1-us82-48-002
     - coellip3 psf
+    - not symmetrizing psf
+    - it is *flat* vs epsf, but still large Rpsf!
+    - I do see evidence of correlated noise in the sheared psfs
+
+tb-y1a1-us82-48-003
+    - coellip3, symmetrize psf
+    - but now I realize symmetrized psfs get correlated noise naturally, so might
+      cause problems too.  We shall see
+
+tb-y1a1-us82-48-004
+    - similar to 001 but turning off symmetrizing weight/bmask
+    - same
+tb-y1a1-us82-48-005
+    - similar to 004 but trimming psf to 31,31
+    - same
+
+tb-y1a1-us82-48-007
+    - matched to y1 gold gal
+    - s/n > 15
+
+    - <g> vs <gpsf1>
+        g1: (-0.0206 +/- 0.0113) x + (0.000601 +/- 0.000234)
+        g2: (-0.00442 +/- 0.00891) x + (0.000597 +/- 0.000184)
+    fitting -0.02,0.02
+    - <g> vs psf g2
+        g1: (0.0157 +/- 0.0133) x + (0.000217 +/- 0.000137)
+        g2: (0.00501 +/- 0.0134) x + (0.000446 +/- 0.000137)
+
+    fitting -0.015,0.013
+        g1: (0.0189 +/- 0.0107) x + (0.000142 +/- 0.000132)
+        g2: (0.0121 +/- 0.00994) x + (0.00036 +/- 0.000123)
+
 
 y1a1-spt-004
     - riz centering psf
