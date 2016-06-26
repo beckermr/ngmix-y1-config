@@ -1,0 +1,34 @@
+# symmetrized psf
+# using better models
+run: 'tb-y1a1-us82-48-003'
+
+# versions
+meds_version: 'tb-y1a1-us82-48-001'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# initial run
+ngmix_info:
+  branch: "master"
+  hash: "f766071a47ae3f6c68cad0975a9c54e23c92674a"
+ngmixer_info:
+  branch: "master"
+  hash: "54d4b8971de4bda40e388cfabe5787b1e7dbc259"
+galsim_info:
+  branch: "#720"
+  hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
+
+psfex:
+  branch: "master"
+  # untagged 0.3.1
+  hash: "68efb31fd519491472943cf7692a20d6d6dd1932"
+
+# job setup
+# note fof is just a single object if not doing multi-object-fitting
+num_fofs_per_chunk: 150
+
+# what to do
+bands: ['r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'
