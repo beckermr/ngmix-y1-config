@@ -4,7 +4,7 @@
 run: 'y1a1-us82-mof-016'
 
 # versions
-meds_version: 'tb-y1a1-us82-001'
+meds_version: 'tb-y1a1-us82-48-001'
 nbrs_version: '001'
 obj_flags_version: '001'
 
