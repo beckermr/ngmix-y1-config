@@ -35,6 +35,25 @@ tb-y1a1-us82-48-007
         g1: (0.0189 +/- 0.0107) x + (0.000142 +/- 0.000132)
         g2: (0.0121 +/- 0.00994) x + (0.00036 +/- 0.000123)
 
+tb-y1a1-us82-48-008
+    - desdm psfs
+
+tb-y1a1-us82-48-009
+    - v10 psfs
+
+    vs g1psf
+        g1: (-0.0391 +/- 0.0175) g1psf + (0.00117 +/- 0.000364)
+        g2: (-0.0223 +/- 0.0148) g1psf + (0.00113 +/- 0.000307)
+
+    vs g2psf
+        g1: (0.042 +/- 0.0194)   g2psf + (0.000223 +/- 0.00024)
+        g2: (-0.0668 +/- 0.0214) g2psf + (0.00108 +/- 0.000266)
+
+
+tb-y1a1-us82-48-010
+    - v11 psfs
+    - very similar to v02 psfs
+
 
 y1a1-spt-004
     - riz centering psf
@@ -126,3 +145,30 @@ ngmix-tb-y1a1-v01c-max-006.yaml
     like 005 but
         - rejecting outliers in the corrector code
         - using one-over-side for max frac
+
+We might end up at nersc, where using python isn't nice.
+What are the essential pieces of the code?
+
+- read MEDS files
+    - deal with flags (hash table)
+- read psfex files
+* uberseg
+    - already have some C code for part of it, but where statements etc.
+    are harder in C/C++
+* nbr subtraction
+    - this is totally python code
+* efficient max like fitting, with priors
+    - compile with fortran minpack?
+    - or code up the simplex in C, fixing errors.  Simplex is much less
+      efficient, but easy to code up.
+* metacal
+    - deconvolve images
+    - shear images
+    - reconvolve images
+    - galsim isn't a C library
+- write standard file format
+
+I think the galsim calls and the nbr subtraction are the real difficulty here.
+We could write out N new MEDS files with sheared images, but would need new
+versions of these for any new PSF.  Porting the code to straight C would be
+too much work.  Writing my app in C++ sounds horrific.
