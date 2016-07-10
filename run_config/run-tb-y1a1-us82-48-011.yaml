@@ -12,7 +12,7 @@ ngmix_info:
   hash: "c89fb56bae62fb972f094ee14d6308f3fe852e50"
 ngmixer_info:
   branch: "master"
-  hash: ""
+  hash: "fb9b2aa74a27a284d8137aa2e1d808f20b3c62cc"
 galsim_info:
   branch: "#720"
   hash: "64192dfbf2bd7f9a616cf6dae7cf7476adace9c4"
