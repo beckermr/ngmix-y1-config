@@ -8,7 +8,7 @@ imageio_type: "meds-des-y1"
 fit_me_galaxy: True
 fit_coadd_galaxy: False
 
-read_wcs: True
+read_wcs: False
 read_me_wcs: False
 
 model_nbrs: True
