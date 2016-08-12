@@ -6,8 +6,8 @@ meds_version: 'y1a1-D10-001'
 nbrs_version: '001'
 obj_flags_version: '001'
 
-# job setup
-num_fofs_per_chunk: 100
+# job setup.  D10 needs more chunks
+num_fofs_per_chunk: 40
 
 # what to do
 bands: ['g','r','i','z']
