@@ -1,0 +1,28 @@
+run: 'y1a1-DFULL-mof-001'
+
+# versions
+# depth 10 special fields
+meds_version: 'y1a1-DFULL-001'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# job setup.
+num_fofs_per_chunk: 40
+
+# what to do
+bands: ['g','r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'
+
+
+ngmix_info:
+  branch: "master"
+  hash: "8b76b22c540e71a78782e08820e8c6296e8280b3"
+ngmixer_info:
+  branch: "master"
+  hash: "8f0dd1821aaeacec2ea2587b2ffb977accb93671"
+
+psfex_info:
+  branch: "master"
+  hash: "1d27bae703d52bed539aba58f9a4af8c13d0b7d9"
