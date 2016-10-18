@@ -99,7 +99,7 @@ model_pars:
 
         T:
             type: "TwoSidedErf"
-            pars: [-7.0, , 1.0, 14.0, 1.0]
+            pars: [-7.0, 1.0, 14.0, 1.0]
 
         counts:
             type: "TwoSidedErf"
