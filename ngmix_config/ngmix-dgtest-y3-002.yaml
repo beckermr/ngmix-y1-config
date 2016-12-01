@@ -69,6 +69,7 @@ min_weight: 1.0e-4
 
 image_flags2check: 655343
 
+use_desdm_psfex: True
 use_psf_rerun: False
 normalize_psf: False
 center_psf: False
