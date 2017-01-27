@@ -1,0 +1,16 @@
+run: 'y1a1-s82-001'
+
+# versions
+meds_version: 'tb-y1a1-us82-001'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# job setup
+# note fof is just a single object if not doing multi-object-fitting
+num_fofs_per_chunk: 1000
+
+# what to do
+bands: ['r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'

@@ -1,0 +1,32 @@
+# metacal run
+run: 'y1a1-D04-001'
+
+# versions
+meds_version: 'y1a1-D04-001'
+nbrs_version: '001'
+obj_flags_version: '001'
+
+# initial run
+ngmix_info:
+  branch: "master"
+  hash: "63b90f0bd4814b397b70587ac1a60f0d1e9326dc"
+ngmixer_info:
+  branch: "master"
+  hash: "e1732a510c58160444a1a80924df39068a6a3f95"
+galsim_info:
+  branch: "master"
+  hash: "ddd40aec45e33068b91815ec5c6403bee84f0e92"
+
+psfex:
+  branch: "master"
+  hash: "70843e625dc53e898af01ea853d0dc54b5d95992"
+
+# job setup
+# note fof is just a single object if not doing multi-object-fitting
+num_fofs_per_chunk: 1000
+
+# what to do
+bands: ['r','i','z']
+
+# how to assemble results
+concat_type: 'concat-des'
